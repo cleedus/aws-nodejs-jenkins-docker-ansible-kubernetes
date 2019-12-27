@@ -14,4 +14,6 @@ node {
             customImage.push()
         }
     }
+
+  }
 }
