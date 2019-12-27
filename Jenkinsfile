@@ -3,7 +3,7 @@ node {
     def registry = 'cleedus/cloudops'
     def customImage = ''
     def registryCredential = 'dockerhub'
-    stage('Preparation'){
+    stage('Checkout Repo'){
         checkout scm
     }
     stage('Build image'){
