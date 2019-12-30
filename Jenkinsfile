@@ -9,7 +9,7 @@ stage('Checkout Repo'){
 
 stage('Build DockerFile'){
 
-    ustomImage = docker.build("${registry}:${env.BUILD_ID}")
+    customImage = docker.build("${registry}:${env.BUILD_ID}")
 }
 stage('Linting JavaScript'){
 customImage.inside{
