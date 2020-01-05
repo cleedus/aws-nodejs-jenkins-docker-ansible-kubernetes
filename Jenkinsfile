@@ -10,7 +10,7 @@ stage('Checkout Repo'){
 stage('Build DockerFile'){
 
     customImage = docker.build("${registry}:${env.BUILD_ID}")
-    sh "docker tag $customIage capstone-image"
+    sh "docker tag $customImage capstone-image"
 }
 stage('Linting JavaScript'){
 customImage.inside{
