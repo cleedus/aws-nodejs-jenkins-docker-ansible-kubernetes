@@ -10,15 +10,20 @@ stage('Checkout Repo'){
 stage('Build DockerFile'){
 
     customImage = docker.build("${registry}:${env.BUILD_ID}")
+    sh ' docker tag capstone-image ${registry}'
 }
 stage('Linting JavaScript'){
 customImage.inside{
     sh 'eslint "**/*.js"'
 }
 }
+
 stage('Upload image to dockerhub'){
-docker.withRegistry('', registryCredential){
-customImage.push('latest')
+    docker.withRegistry('', registryCredential){
+    customImage.push('latest')
 }
+}
+stage('Deploy Blue Green'){
+    
 }
 }
