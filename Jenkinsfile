@@ -10,7 +10,7 @@ stage('Checkout Repo'){
 stage('Build DockerFile'){
 
     customImage = docker.build("${registry}:${env.BUILD_ID}")
-    sh ' docker tag capstone-image cleedus/cloudops'
+    sh ' docker tag cleedus/cloudops:"${env.BUILD_ID}" capstone-image'
 }
 stage('Linting JavaScript'){
 customImage.inside{
