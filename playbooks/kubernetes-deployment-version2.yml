@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: capstone-2
+spec:
+  selector:
+    matchLabels:
+      app: capstone-2 
+  replicas: 2 # tells deployment to run 2 pods matching the template
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 1
+
+  template:
+    metadata:
+      labels:
+        app: capstone-2
+    spec:
+      containers:
+         - name:  cloudops
+           image: cleedus/cloudops:green
+           imagePullPolicy: Always
+           ports:
+             - containerPort: 80
+      imagePullSecrets:
+         - name: regcred

@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: capstone-service-2
+  labels:
+    app: capstone-2
+spec:
+  selector:
+    app: capstone-2
+  type: LoadBalancer
+  ports:
+    - port: 80
+      targetPort: 80

@@ -22,6 +22,7 @@ stage('Upload image to dockerhub'){
 }
 stage('Deploy App'){
     
+    
 }
 }
 

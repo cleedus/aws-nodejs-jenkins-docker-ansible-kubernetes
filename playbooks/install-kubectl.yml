@@ -1,0 +1,17 @@
+---
+- hosts: localhost
+  become: yes
+  tasks:
+    - name: get version
+      shell: curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt
+      register: version
+    - name: install kubectl
+      get_url:
+        url: https://storage.googleapis.com/kubernetes-release/release/{{version.stdout}}/bin/linux/amd64/kubectl
+        dest: /usr/local/bin/
+        mode: '0755'
+
+              
+     
+
+     

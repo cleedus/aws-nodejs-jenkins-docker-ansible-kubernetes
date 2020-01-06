@@ -1,0 +1,7 @@
+---
+- hosts: localhost
+  become: true
+  tasks:
+    - name: Install AWSCLI
+      pip: name=awscli state=latest
+   

@@ -1,0 +1,8 @@
+---
+- hosts: localhost
+  name: create bucket
+  tasks:
+    - s3_bucket:
+       name: cm-k8s-store
+       region: us-west-2
+       state: present

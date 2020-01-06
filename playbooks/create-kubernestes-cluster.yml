@@ -1,0 +1,14 @@
+---
+- hosts: localhost
+  become: yes
+  tasks:
+   - name: create a cluster
+     command: kops create cluster \
+       --state "s3://cm-k8s-store" \
+       --zones "us-west-2a,us-west-2b"  \
+       --master-count 1 \
+       --master-size=t2.micro \
+       --node-count 2 \
+       --node-size=t2.micro \
+       --name cleedus.k8s.local \
+
