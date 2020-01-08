@@ -22,7 +22,7 @@ stage('Upload image to dockerhub'){
 }
 stage('Deploy App'){
     
-    sh 'ansible-playbook ./playbooks/install-kubectl.yml'
+    sh 'ansible-playbook ./playbooks/deployment-play.yml'
 }
 }
 
