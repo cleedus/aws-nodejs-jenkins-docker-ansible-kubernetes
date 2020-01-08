@@ -3,5 +3,5 @@
   hosts: localhost 
   tasks: 
     - name: create a deployment
-      command: kubectl apply -f kubernetes-deployment.yml
+      shell: kubectl apply -f kubernetes-deployment.yml
  
