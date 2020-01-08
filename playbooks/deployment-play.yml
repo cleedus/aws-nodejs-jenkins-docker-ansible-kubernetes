@@ -1,6 +1,7 @@
 ---
 - name: Create pods using deployment 
   hosts: localhost 
+  become_user: ubuntu
   tasks: 
     - name: create a deployment
       shell: kubectl apply -f kubernetes-deployment.yml
