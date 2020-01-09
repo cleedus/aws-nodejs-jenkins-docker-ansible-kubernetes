@@ -23,6 +23,7 @@ stage('Upload image to dockerhub'){
 stage('Deploy App'){
     
     sh 'ansible-playbook ./playbooks/deployment-play.yml'
+    sh 'ansible-playbook ./playbooks/service-play.yml'
 }
 }
 
