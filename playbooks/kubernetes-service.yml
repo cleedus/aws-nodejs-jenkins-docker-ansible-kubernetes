@@ -6,7 +6,7 @@ metadata:
     app: capstone
 spec:
   selector:
-    app: capstone-2
+    app: capstone
   type: LoadBalancer
   ports:
     - port: 80
