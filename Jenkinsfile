@@ -17,7 +17,7 @@ customImage.inside{
 }
 stage('Upload image to dockerhub'){
     docker.withRegistry('', registryCredential){
-    customImage.push('latest')
+    customImage.push('blue')
 }
 }
 stage('Deploy App'){
